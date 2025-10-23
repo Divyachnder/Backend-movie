@@ -11,12 +11,12 @@ app.use(cors({
   origin: "https://frontend-movie-xi-nine.vercel.app"
 }));
 
-// Connect to MongoDB Atlas
+// MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB connected successfully"))
   .catch(err => console.error("❌ MongoDB connection error:", err));
 
-// Routes
+// API routes
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/movies", require("./routes/movieRoutes"));
 
